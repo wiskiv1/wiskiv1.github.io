@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<!--ik weet dat het ni goe is maar het werkt mvg witse-->
+
+<head>
+    <title>wiskiv1 - projects</title>
+    <style>
+        /*alles in de body*/
+        body * {
+            font-family: Consolas, 'Courier New', monospace;
+            padding-left: 10px;
+        }
+
+        /*de body zelf*/
+        body {
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+        }
+
+        .menubar {
+            position: sticky;
+            top: 0;
+            background-color: #1d719e;
+            padding-left: 10px;
+            overflow: auto;
+        }
+
+        .menubar * {
+            padding: 5px;
+            margin:0px;
+            height: 28px;
+            width: auto;
+            float: left;
+            text-align: center;
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .menubar *:hover {
+            background-color: #0000002f;
+        }
+
+        footer {
+            background-color: #1d719e;
+            padding: 5px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer * {
+            margin: 5px;
+            color: white;
+        }
+
+        .grid-container {
+            padding: 0px;
+            font-size: 0px;
+        }
+
+        .grid-container :hover {
+            background-color: #0000002f;
+        }
+
+        .grid-item {
+            padding: 0px;
+            display: inline-grid;
+            width: 20%;
+            font-size: 17px;
+            text-align: center;
+        }
+
+        .grid-item :hover {
+            background-color: #00000000;
+        }
+        .grid-item * {
+            padding: 0px;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--header niet sticky-->
+    <header style="margin-top: 10px; margin-bottom: 10px;">
+        <img src="/assets/logo.png" width="56" height="56" style="float:left; padding-left: 0px; margin-right: 5px;">
+        <h1 style="margin: 0px; padding: 0px;">wiskiv1</h1>
+        <p style="margin: 0px; padding: 0px;">Mijn hoekje van het internet!</p>
+    </header>
+
+    <!--menu wel sticky-->
+    <div class="menubar">
+        <a href="/index.html">Home</a>
+        <a href="/projects_main.html">Projects</a>
+        <!--<a href="/blog_main.html">Blog</a>-->
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item" onclick="location.href='/projects/obnoxious_creation.html';">
+            <img src="/assets/obnoxious_creation.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
+            <h4>obnoxious creation</h4>
+            <p style="font-size: 15px">coronasimulatie voor OCP</p>
+        </div>
+        <div class="grid-item" onclick="location.href='/projects/imense_astronaut.html';">
+            <img src="/assets/Immense_Astronaut.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
+            <h5>Immense astronaut</h5>
+            <p style="font-size: 15px">oneindige scroller game</p>
+        </div>
+        <div class="grid-item" onclick="location.href='/projects/AAA.html';">
+            <img src="/assets/AAA.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
+            <h5>AAAAAAA</h5>
+            <p style="font-size: 15px">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+        </div>
+    </div>
+
+    <footer>
+        <a href="https://github.com/wiskiv1">github</a>
+    </footer>
+</body>
+
+<!--
+    <div class="grid-item" onclick="location.href='HTMLPAGINA';">
+        <img src="afbeelding source" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
+        <h5>naam project</h5>
+        <p style="font-size: 15px">korte beschrijving</p>
+    </div>
+-->
+</html>
