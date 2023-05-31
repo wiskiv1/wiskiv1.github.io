@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<!--ik weet dat het ni goe is maar het werkt mvg witse-->
+
+<head>
+    <title>wiskiv1 - temp</title>
+    <style>
+        /*alles in de body*/
+        body * {
+            font-family: Consolas, 'Courier New', monospace;
+            padding-left: 10px;
+        }
+
+        /*de body zelf*/
+        body {
+            margin: 0px;
+            padding: 0px;
+            overflow-x: hidden;
+        }
+
+        .menubar {
+            position: sticky;
+            top: 0;
+            background-color: #1d719e;
+            padding-left: 10px;
+            overflow: auto;
+        }
+
+        .menubar * {
+            padding: 5px;
+            margin:0px;
+            height: 28px;
+            width: auto;
+            float: left;
+            text-align: center;
+            color: black;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .menubar *:hover {
+            background-color: #0000002f;
+        }
+
+        footer {
+            background-color: #1d719e;
+            padding: 5px;
+            width: 100%;
+        }
+
+        footer * {
+            margin: 5px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!--header niet sticky-->
+    <header style="margin-top: 10px; margin-bottom: 10px;">
+        <img src="/assets/logo.png" width="56" height="56" style="float:left; padding-left: 0px; margin-right: 5px;">
+        <h1 style="margin: 0px; padding: 0px;">wiskiv1</h1>
+        <p style="margin: 0px; padding: 0px;">Mijn hoekje van het internet!</p>
+    </header>
+
+    <!--menu wel sticky-->
+    <div class="menubar">
+        <a href="/index.html">Home</a>
+        <a href="/projects_main.html">Projects</a>
+        <!--<a href="/blog_main.html">Blog</a>-->
+    </div>
+
+
+    <iframe src="slimste mens ter wereld/index.html" width="95%" height="900px"></iframe>
+    
+    <hr>
+    <h3>Aspi's bij de groepen - kerels - Bivak 2022</h3>
+    <p>
+        Avondspel voor kerels, overdag speelden we spellen om seconden te winnen dit programma is voor de finale een quiz in de stijl van de slimste mens <br>
+        <br>
+        voer mensen hun namen en en vervolgens hoeveel seconden ze hebben (meer als 2 personen mogelijk) <br>
+        Persoon met minste seconden begindt, voor elk juist antwoord -20 seconden bij alle andere finalisten <br>
+        op volgende klikken doorloopt alle spelers in volgorde van minste naar meeste seconden <br>
+        als iemand anders minder punten heeft wisseld wie er mag antwoorden <br>
+    </p>
+
+    <footer>
+        <a href="https://github.com/wiskiv1">github</a>
+    </footer>
+</body>
+
+</html>
