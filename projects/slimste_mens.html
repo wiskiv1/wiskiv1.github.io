@@ -3,7 +3,7 @@
 <!--ik weet dat het ni goe is maar het werkt mvg witse-->
 
 <head>
-    <title>wiskiv1 - temp</title>
+    <title>wiskiv1 - Slimste mens</title>
     <style>
         /*alles in de body*/
         body * {
@@ -72,7 +72,9 @@
     </div>
 
 
-    <iframe src="slimste mens ter wereld/index.html" width="95%" height="900px"></iframe>
+    <iframe id="spel" src="slimste mens ter wereld/index.html" width="95%" height="900px" scrolling="no"></iframe>
+
+    <input type="button" value="FULLSCREEN" onclick="openFullscreen()">
     
     <hr>
     <h3>Aspi's bij de groepen - kerels - Bivak 2022</h3>
@@ -82,12 +84,28 @@
         voer mensen hun namen en en vervolgens hoeveel seconden ze hebben (meer als 2 personen mogelijk) <br>
         Persoon met minste seconden begindt, voor elk juist antwoord -20 seconden bij alle andere finalisten <br>
         op volgende klikken doorloopt alle spelers in volgorde van minste naar meeste seconden <br>
-        als iemand anders minder punten heeft wisseld wie er mag antwoorden <br>
+        als iemand anders minder punten heeft wisseld wie er mag antwoorden <br>  
+        <br>
+        fullscreen voor beste spelervaring
     </p>
 
     <footer>
-        <a href="https://github.com/wiskiv1">github</a>
+        <iframe src="../footer.html" frameborder="0" height="18px"></iframe>
     </footer>
+<script>
+    var elem = document.getElementById("spel");
+
+    function openFullscreen() {
+        console.log("fullscreen");
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+        }
+    }
+</script>
 </body>
 
 </html>

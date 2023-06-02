@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
+  <meta charset="utf-8" />
+
+</head>
+
+<body style="background-color:rgb(0, 0, 0);">
+  <script>//line 1
+    var it;
+    var r1;
+    var is;
+    var r2;
+    //line 2
+    var r3;
+    var quarter;
+    var r4;
+    //line 3
+    var twenty;
+    var five;
+    var r5;
+    //line 4
+    var half;
+    var r6;
+    var ten;
+    var r7;
+    var to;
+    //line 5;
+    var past;
+    var r8;
+    var nine;
+    //line 6
+    var one;
+    var six;
+    var three;
+    //line 7
+    var four;
+    var five2;
+    var two;
+    //line 8
+    var eight;
+    var eleven;
+    //line 9
+    var seven;
+    var twelve;
+    //line 10;
+    var ten2;
+    var r9;
+    var oclock;
+    
+    var x;
+    var y;
+    var size = 20;
+    
+    function setup() {
+      createCanvas(windowWidth, windowHeight - 20);
+      
+      size = height / 12;
+      x = width / 2 - (5.5 * size);
+      y = size;
+      
+      createwords();
+    }
+    
+    function draw() {
+      //doe uur shit
+      var uur;
+      if (hour() == 24) {
+        uur = 0;
+      } else if (hour() >= 12) {
+        uur = hour() - 12;
+      } else {
+        uur = hour();
+      }
+      
+      background(0);
+      it.activate();
+      is.activate();
+      
+      //setting all the wright words to active
+      if (minute() > 14 && minute() < 20) {
+        quarter.activate();
+      } else if (minute() > 44 && minute() < 50) {
+        quarter.activate();
+      }
+      
+      if (minute() > 19 && minute() < 30) {
+        twenty.activate();
+      } else if (minute() > 34 && minute() < 45) {
+        twenty.activate();
+      }
+      
+      if (minute() > 4 && minute() < 10) {
+        five.activate();
+      } else if (minute() > 54) {
+        five.activate();
+      } else if (minute() > 24 && minute() < 30) {
+        five.activate();
+      } else if (minute() > 34 && minute() < 40) {
+        five.activate();
+      }
+      
+      if (minute() > 29 && minute() < 35) {
+        half.activate();
+      }
+      
+      if (minute() > 9 && minute() < 15) {
+        ten.activate();
+      } else if (minute() > 49 && minute() < 55) {
+        ten.activate();
+      }
+      
+      if (minute() > 34) {
+        to.activate();
+      }
+      
+      if (minute() > 4 && minute() < 30) {
+        past.activate();
+      }
+      
+      //-----------------------------------------------------------------------------
+      
+      if (minute() > 34 && uur == 8) {
+        nine.activate();
+      } else if (minute() < 35 && uur == 9) {
+        nine.activate();
+      }
+      
+      if (minute() > 34 && uur == 0) {
+        one.activate();
+      } else if (minute() < 35 && uur == 1) {
+        one.activate();
+      }
+      
+      if (minute() > 34 && uur == 5) {
+        six.activate();
+      } else if (minute() < 35 && uur == 6) {
+        six.activate();
+      }
+      
+      if (minute() > 34 && uur == 9) {
+        ten2.activate();
+      } else if (minute() < 35 && uur == 10) {
+        ten2.activate();
+      }
+      
+      if (minute() > 34 && uur == 2) {
+        three.activate();
+      } else if (minute() < 35 && uur == 3) {
+        three.activate();
+      }
+      
+      if (minute() > 34 && uur == 3) {
+        four.activate();
+      } else if (minute() < 35 && uur == 4) {
+        four.activate();
+      }
+      
+      if (minute() > 34 && uur == 4) {
+        five2.activate();
+      } else if (minute() < 35 && uur == 5) {
+        five2.activate();
+      }
+      
+      if (minute() > 34 && uur == 1) {
+        two.activate();
+      } else if (minute() < 35 && uur == 2) {
+        two.activate();
+      }
+      
+      if (minute() > 34 && uur == 7) {
+        eight.activate();
+      } else if (minute() < 35 && uur == 8) {
+        eight.activate();
+      }
+      
+      if (minute() > 34 && uur == 10) {
+        eleven.activate();
+      } else if (minute() < 35 && uur == 11) {
+        eleven.activate();
+      }
+      
+      if (minute() > 34 && uur == 6) {
+        seven.activate();
+      } else if (minute() < 35 && uur == 7) {
+        seven.activate();
+      }
+      
+      if (minute() > 34 && uur == 11) {
+        twelve.activate();
+      } else if (minute() < 35 && uur == 0) {
+        twelve.activate();
+      }
+      
+      //----------------------------------------------------------------------
+      
+      if (minute() < 5) {
+        oclock.activate();
+      }
+      
+      drawwords();
+    }
+    
+    function createwords() {
+      //line 1
+      it = new Word("IT", x, y);
+      r1 = new Letter("L", x + (2 * size), y);
+      is = new Word("IS", x + (3 * size), y);
+      r2 = new Word("ASTIME", x + (5 * size), y);
+      //line 2
+      r3 = new Word("AC", x, y + (1 * size));
+      quarter = new Word("QUARTER", x + (2 * size), y + (1 * size));
+      r4 = new Word("DC", x + (9 * size), y + (1 * size));
+      //line 3
+      twenty = new Word("TWENTY", x + (0 * size), y + (2 * size));
+      five = new Word("FIVE", x + (6 * size), y + (2 * size));
+      r5 = new Letter("X", x + (10 * size), y + (2 * size));
+      //line 4
+      half = new Word("HALF", x + (0 * size), y + (3 * size));
+      r6 = new Letter("B", x + (4 * size), y + (3 * size));
+      ten = new Word("TEN", x + (5 * size), y + (3 * size));
+      r7 = new Letter("F", x + (8 * size), y + (3 * size));
+      to = new Word("TO", x + (9 * size), y + (3 * size));
+      //line 5;
+      past = new Word("PAST", x + (0 * size), y + (4 * size));
+      r8 = new Word("ERU", x + (4 * size), y + (4 * size));
+      nine = new Word("NINE", x + (7 * size), y + (4 * size));
+      //line 6
+      one = new Word("ONE", x + (0 * size), y + (5 * size));
+      six = new Word("SIX", x + (3 * size), y + (5 * size));
+      three = new Word("THREE", x + (6 * size), y + (5 * size));
+      //line 7
+      four = new Word("FOUR", x + (0 * size), y + (6 * size));
+      five2 = new Word("FIVE", x + (4 * size), y + (6 * size));
+      two = new Word("TWO", x + (8 * size), y + (6 * size));
+      //line 8
+      eight = new Word("EIGHT", x + (0 * size), y + (7 * size));
+      eleven = new Word("ELEVEN", x + (5 * size), y + (7 * size));
+      //line 9
+      seven = new Word("SEVEN", x + (0 * size), y + (8 * size));
+      twelve = new Word("TWELVE", x + (5 * size), y + (8 * size));
+      //line 10;
+      ten2 = new Word("TEN", x + (0 * size), y + (9 * size));
+      r9 = new Word("SE", x + (3 * size), y + (9 * size));
+      oclock = new Word("OCLOCK", x + (5 * size), y + (9 * size));
+    }
+    
+    function drawwords() {
+      //line 1
+      it.show();
+      r1.show();
+      is.show();
+      r2.show();
+      //line 2
+      r3.show();
+      quarter.show();
+      r4.show();
+      //line 3
+      twenty.show();
+      five.show();
+      r5.show();
+      //line 4
+      half.show();
+      r6.show();
+      ten.show();
+      r7.show();
+      to.show();
+      //line 5;
+      past.show();
+      r8.show();
+      nine.show();
+      //line 6
+      one.show();
+      six.show();
+      three.show();
+      //line 7
+      four.show();
+      five2.show();
+      two.show();
+      //line 8
+      eight.show();
+      eleven.show();
+      //line 9
+      seven.show();
+      twelve.show();
+      //line 10;
+      ten2.show();
+      r9.show();
+      oclock.show();
+    }</script>
+  <script>class Letter {
+
+    constructor(l, x, y) {
+      this.posX = x;
+      this.posY = y;
+      this.letter = l;
+      this.active = false;
+    }
+    
+    show() {
+      textSize(size);
+      textAlign(CENTER, TOP);
+      if (this.active) {
+        fill(255);
+      } else {
+        fill(20);
+      }
+      text(this.letter, this.posX, this.posY);
+    }
+  }</script>
+  <script>class Word {
+
+    constructor(w, x ,y) {
+      this.word = w;
+      this.letters = this.word.split("");
+      this.posX = x;
+      this.posY = y;
+      
+      //creating new letter objects
+      for (var i = 0; i < this.letters.length; i++) {
+        this.letters[i] = new Letter(this.letters[i], this.posX + (i * size), this.posY);
+      }
+    }
+    
+    show() {
+      for (var i = 0; i < this.letters.length; i++) {
+        this.letters[i].show();
+      }
+      
+      for (var j = 0; j < this.letters.length; j++) {
+        this.letters[j].active = false;
+      }
+    }
+    
+    activate() {
+      for (var i = 0; i < this.letters.length; i++) {
+        this.letters[i].active = true;
+      }
+    }
+  }</script>
+  
+  
+</body>
+
+</html>

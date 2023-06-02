@@ -10,7 +10,7 @@ var bezig = false;
 var penalty = 20;
 
 function setup() {
-  createCanvas(displayWidth - 3, displayHeight - 3);
+  createCanvas(displayWidth, displayHeight);
   frameRate(30);
 }
 
