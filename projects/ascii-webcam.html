@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<!--ik weet dat het ni goe is maar het werkt mvg witse-->
+
+<head>
+    <title>wiskiv1 - ASCII webcam</title>
+    <link rel="icon" type="image/x-icon" href="../assets/logo.ico">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+    <meta charset="utf-8" />
+
+    <style>
+        /*alles in de body*/
+        body * {
+            font-family: Consolas, 'Courier New', monospace;
+            padding-left: 10px;
+        }
+
+        /*de body zelf*/
+        body {
+            margin: 0px;
+            padding: 0px;
+            padding-bottom: 20px;
+            overflow-x: hidden;
+
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .menubar {
+            position: sticky;
+            top: 0;
+            background-color: #1d719e;
+            padding-left: 10px;
+            overflow: auto;
+        }
+
+        .menubar * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        footer {
+            background-color: #1d719e;
+            padding: 0px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer * {
+            margin: 5px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!--header niet sticky-->
+    <header style="margin-top: 10px; margin-bottom: 10px;">
+        <img src="/assets/logo.png" width="56" height="56" style="float:left; padding-left: 0px; margin-right: 5px;">
+        <h1 style="margin: 0px; padding: 0px;">wiskiv1</h1>
+        <p style="margin: 0px; padding: 0px;">Mijn hoekje van het internet!</p>
+    </header>
+
+    <!--menu wel sticky-->
+    <div class="menubar">
+        <iframe src="../menu.html" frameborder="0" height="38px" width="100%"></iframe>
+    </div>
+
+    <main> 
+    </main>
+    <div id="knopjes"></div>
+
+    <!-- <iframe src="https://rawcdn.githack.com/wiskiv1/ascii-webcam/bb93dac1e4bd9b8849f93151c235d2b302842fed/index.html" frameborder="0" width="90%" height="520px"></iframe> -->
+
+    <hr>
+    <h2>ASCII webcam // werkt niet op mobile?</h2>
+    <p>
+        Zeer simpele webcam naar ASCII-tekst filter. Gemaakt omdat ik niks beter te doen had <br>
+        inspiratie voor dit project: <a href="https://www.youtube.com/watch?v=55iwMYv8tGI" style="padding: 0px;">The coding train: ASCII Text Images</a><br>
+        <br>
+
+        20/07/2023
+    </p>
+
+    <footer>
+        <iframe src="../footer.html" frameborder="0" height="18px" width="100%"></iframe>
+    </footer>
+
+    <script> 
+        let webcam;
+        let graphic;
+        let scale = 7;
+        
+        let hsb_modus = true;
+        
+        let karakters = ' .":~!/%=#&$@';
+        
+        let button, knop2, input;
+        
+        function setup() {
+            webcam = createCapture(VIDEO);
+            webcam.hide();
+        
+            createCanvas(webcam.width, webcam.height);
+        
+            button = createButton("📸");
+            button.mousePressed(FOTO);
+            button.parent("knopjes");
+            knop2 = createButton("verander kleur modus");
+            knop2.mousePressed(verader_modus);
+            knop2.parent("knopjes");
+            input = createInput(' .":~!/%=#&$@');
+            input.parent("knopjes");
+        }
+        
+        function draw() {
+            background(52);
+            if (webcam.width != width) {
+                resizeCanvas(webcam.width, webcam.height);
+                graphic = createGraphics(Math.floor(webcam.width/scale), Math.floor(webcam.height/scale));
+            }
+        
+            if (graphic != null) {
+                graphic.image(webcam, 0, 0, graphic.width, graphic.height);
+        
+                graphic.loadPixels();
+                let d = pixelDensity();
+                karakters = input.value();
+        
+                for (let y = 0; y < graphic.height; y++) {
+                    for (let x = 0; x < graphic.width; x++){
+                        push();
+                        noStroke();
+                        let index = 4*d*(x + graphic.width*y*d);
+                        let kleur = color(graphic.pixels[index], graphic.pixels[index + 1], graphic.pixels[index + 2]);
+                        if (hsb_modus) {fill(color(`hsb(${Math.floor(hue(kleur))}, ${Math.floor(saturation(kleur))}%, 100%)`  ));}
+                        else {fill(kleur);}
+                        text(kies_karakter(karakters, kleur), x*scale, y*scale);
+                        pop();
+                    }
+                }
+            }
+        }
+        
+        function kies_karakter(chars, kleur) {
+            return chars[Math.floor(chars.length*(brightness(kleur)/100)) - 1];
+        }
+        
+        function FOTO() {
+            saveCanvas('FOTO', 'png')
+        }
+        
+        function verader_modus() {
+            hsb_modus = !hsb_modus;
+        }
+        </script>
+
+</body>
+
+</html>
