@@ -1,0 +1,4 @@
+Inspiratie halen uit tom7.org
+=> speelvol, maar toch nog cava serieus
+=> alles moet nog steeds statische in browser html, css en javascript zijn
+=> => maar miss toch op 1 of andere manier dingen zoals blog posts dynamische genereren?
