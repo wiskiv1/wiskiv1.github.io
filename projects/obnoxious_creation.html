@@ -1,81 +1,92 @@
 <!DOCTYPE html>
 <html>
-<!--ik weet dat het ni goe is maar het werkt mvg witse-->
 
 <head>
     <title>wiskiv1 - obnoxious-creation</title>
-    <link rel="icon" type="image/x-icon" href="../assets/logo.ico">
+    <link rel="icon" type="image/x-icon" href="/assets/logo.ico">
     <style>
-        /*alles in de body*/
+        .window {
+            margin: auto;
+            width: 850px;
+            position: relative;
+            background-color: white;
+            margin-top: 50px;
+            margin-bottom: 100px;
+            padding-bottom: 10px;
+        }
+
+        body {
+            background-color: #333333;
+        }
+
         body * {
             font-family: Consolas, 'Courier New', monospace;
-            padding-left: 10px;
         }
 
-        /*de body zelf*/
-        body {
-            margin: 0px;
-            padding: 0px;
-            padding-bottom: 20px;
-            overflow-x: hidden;
 
+        #menu_bar {
+            background-color: #1d719e;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            z-index: 1;
             position: relative;
-            min-height: 100vh;
         }
 
-        .menubar {
-            position: sticky;
-            top: 0;
-            background-color: #1d719e;
-            padding-left: 10px;
-            overflow: auto;
-        }
-
-        .menubar * {
-            padding: 0px;
+        #menu_bar a {
             margin: 0px;
+            padding: 5px;
+
+            font-size: 24px;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
         }
 
-        footer {
-            background-color: #1d719e;
-            padding: 0px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+        #menu_bar a:hover {
+            background-color: #0000002f;
         }
 
-        footer * {
-            margin: 5px;
-            color: white;
+        #menu_bar h1 {
+            text-align: right;
+            margin: 0px;
+            float: right;
+        }
+
+        .content {
+            margin: 10px;
         }
     </style>
 </head>
 
 <body>
-    <!--header niet sticky-->
-    <header style="margin-top: 10px; margin-bottom: 10px;">
-        <img src="/assets/logo.png" width="56" height="56" style="float:left; padding-left: 0px; margin-right: 5px;">
-        <h1 style="margin: 0px; padding: 0px;">wiskiv1</h1>
-        <p style="margin: 0px; padding: 0px;">Mijn hoekje van het internet!</p>
-    </header>
+    <div class="window">
+        <header>
+            <div id="menu_bar">
+                <a href="/projects_main.html">< projects</a>
+                <h1>Wiskiv1</h1>
+            </div>
+        </header>
 
-    <!--menu wel sticky-->
-    <div class="menubar">
-        <iframe src="../menu.html" frameborder="0" height="38px" width="100%"></iframe>
+        <div id="content">
+            <h1 class="content">Eindwerk middelbaar 2022</h1>
+            <iframe class="content"
+                src="https://rawcdn.githack.com/wiskiv1/obnoxious-creation/6d3627789b8f9100cbe761a472d66d36f8dd0ad1/index.html"
+                frameborder="0" width="815px" height="1000px" scrolling="no"
+                style="display: block; margin-left: auto; margin-right: auto;"></iframe>
+
+            <hr class="content">
+            <p class="content">
+                Eindwerk in 6de middelbaar (2022), litteratuurstudie ging over epidemiologie en de versprijding van
+                ziektes doorheen een populatie. Onderzoeksproject was bovenstaande variatie op het SIR model om
+                epidemieën te simuleren <br>
+                code is te vinden op github onder 'obnoxious-creation'
+            </p>
+        </div>
+
     </div>
-
-    <iframe src="https://rawcdn.githack.com/wiskiv1/obnoxious-creation/6d3627789b8f9100cbe761a472d66d36f8dd0ad1/index.html" frameborder="0" width="100%" height="1100px"></iframe>
-
-    <hr>
-    <h3>eindwerk middelbaar 2022</h3>
-    <p>
-    Eindwerk in 6de middelbaar (2022), litteratuurstudie ging over epidemiologie en de versprijding van ziektes doorheen een populatie. Onderzoeksproject was bovenstaande variatie op het SIR model om epidemieën te simuleren <br>
-    code is te vinden op github onder 'obnoxious-creation' <br>
-    </p>
-
-    <footer>
-        <iframe src="../footer.html" frameborder="0" height="18px" width="100%"></iframe>
-    </footer>
 </body>
+
 
 </html>

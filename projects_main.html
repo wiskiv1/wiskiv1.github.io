@@ -1,153 +1,206 @@
 <!DOCTYPE html>
 <html>
-<!--ik weet dat het ni goe is maar het werkt mvg witse-->
 
 <head>
-    <title>wiskiv1 - projects</title>
+    <title>wiskiv1 - Projects</title>
     <link rel="icon" type="image/x-icon" href="/assets/logo.ico">
     <style>
-        /*alles in de body*/
+        .window {
+            margin: auto;
+            width: 850px;
+            position: relative;
+            background-color: white;
+            margin-top: 100px;
+            margin-bottom: 100px;
+            padding-bottom: 10px;
+        }
+
+        body {
+            background-color: #333333;
+        }
+
         body * {
             font-family: Consolas, 'Courier New', monospace;
-            padding-left: 10px;
         }
 
-        /*de body zelf*/
-        body {
+        #title {
+            margin-bottom: 15px;
+        }
+
+        #title h1 {
+            text-align: right;
             margin: 0px;
-            padding: 0px;
-            padding-bottom: 20px;
-            overflow-x: hidden;
-
-            position: relative;
-            min-height: 100vh;
+            padding-right: 10px;
         }
 
-        .menubar {
-            position: sticky;
-            top: 0;
-            background-color: #1d719e;
-            padding-left: 10px;
-            overflow: auto;
-        }
-
-        .menubar * {
-            padding: 0px;
+        #title h2 {
+            text-align: right;
             margin: 0px;
+            padding-right: 10px;
         }
 
-        footer {
-            background-color: #1d719e;
-            padding: 0px;
+        #LogoDiv {
+            width: 150px;
+            height: 150px;
             position: absolute;
-            bottom: 0;
+            top: -75px;
+            left: -50px;
+        }
+
+        #LogoDiv img {
             width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
         }
 
-        footer * {
-            margin: 5px;
-            color: white;
+        #menu_bar {
+            background-color: #1d719e;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            z-index: 1;
+            position: relative;
         }
 
-        .grid-container {
-            padding: 0px;
-            font-size: 0px;
+        #menu_bar a {
+            margin: 0px;
+            padding: 5px;
+
+            font-size: 24px;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
         }
 
-        .grid-container :hover {
+        #menu_bar *:hover {
             background-color: #0000002f;
         }
 
+        .content {
+            margin: 10px;
+        }
+        
         .grid-item {
-            padding: 0px;
+            width: 200px;
             display: inline-grid;
-            width: 20%;
-            font-size: 17px;
-            text-align: center;
         }
 
-        .grid-item :hover {
-            background-color: #00000000;
+        .grid-item img {
+            height: 82px;
+            position: relative;
+            margin: auto;
         }
-        .grid-item * {
-            padding: 0px;
-            margin: 5px;
+
+        .grid-item h4 {
+            text-align: center;
+            font-weight: bold;
+            margin: auto;
+        }
+
+        .grid-item p {
+            text-align: center;
+            margin: auto;
+            font-size: 13px;
+        }
+
+        .grid-item:hover {
+            background-color: #0000002f;
         }
     </style>
-
 </head>
 
 <body>
-    <!--header niet sticky-->
-    <header style="margin-top: 10px; margin-bottom: 10px;">
-        <img src="/assets/logo.png" width="56" height="56" style="float:left; padding-left: 0px; margin-right: 5px;">
-        <h1 style="margin: 0px; padding: 0px;">wiskiv1</h1>
-        <p style="margin: 0px; padding: 0px;">Mijn hoekje van het internet!</p>
-    </header>
+    <div class="window">
+        <header>
+            <div id="title">
+                <div id="LogoDiv">
+                    <img src="/assets/logo_by_parts/1.png" alt="" id="Logo1"></img>
+                    <img src="/assets/logo_by_parts/2.png" alt="" id="Logo2"></img>
+                    <img src="/assets/logo_by_parts/3.png" alt="" id="Logo3"></img>
+                    <img src="/assets/logo_by_parts/4.png" alt="" id="Logo4"></img>
+                    <img src="/assets/logo_by_parts/5.png" alt="" id="Logo5"></img>
+                    <img src="/assets/logo_by_parts/6.png" alt="" id="Logo6"></img>
+                    <img src="/assets/logo_by_parts/7.png" alt="" id="Logo7"></img>
+                </div>
+                <h1>Wiskiv1</h1>
+                <h2>Mijn hoekje van het internet!</h2>
+            </div>
+            <div id="menu_bar">
+                <a href="index.html">HOME</a>
+                <a href="projects_main.html">PROJECTS</a>
+            </div>
+        </header>
 
-    <!--menu wel sticky-->
-    <div class="menubar">
-        <iframe src="menu.html" frameborder="0" height="38px" width="100%"></iframe>
+        <div id="content">
+            <h1 class="content">Projecten</h1>
+
+            <div class="content">
+                <div class="grid-item" style="margin: 0px;" onclick="location.href='/projects/Bridge_designer.html';">
+                    <img src="/assets/bridge_designer.png">
+                    <h4>Bridge Designer</h4>
+                    <p>liggerbrug ontwerpen</p>
+                </div>
+                <div class="grid-item" style="margin: 0px;" onclick="location.href='/projects/ascii-webcam.html';">
+                    <img src="/assets/ascii-webcam.png">
+                    <h4>ASCII webcam</h4>
+                    <p>is wat het zegt dat het is</p>
+                </div>
+                <div class="grid-item" style="margin: 0px;" onclick="location.href='/projects/PI_polygon.html';">
+                    <img src="/assets/PiPolygon.png">
+                    <h4>Pi berekenen</h4>
+                    <p>Pi berekenen met de methode van Archimedes</p>
+                </div>
+                <div class="grid-item" style="margin: 0px;" onclick="location.href='/projects/US-flag.html';">
+                    <img src="/assets/US-flag.png">
+                    <h4>VS-vlag generator</h4>
+                    <p>willekeurige, legale!, amerikaanse vlaggen</p>
+                </div>
+                <div  class="grid-item" style="margin: 0px;" onclick="location.href='/projects/slimste_mens.html';">
+                    <img src="/assets/slimste.png"  >
+                    <h4>Slimste Mens timer</h4>
+                    <p  >Project voor aspi's bij de groepen bivak 2022</p>
+                </div>
+                <div  class="grid-item" style="margin: 0px;" onclick="location.href='/projects/obnoxious_creation.html';">
+                    <img src="/assets/obnoxious_creation.png"  >
+                    <h4>obnoxious creation</h4>
+                    <p  >coronasimulatie voor OCP</p>
+                </div>
+                <div  class="grid-item" style="margin: 0px;" onclick="location.href='/projects/breakout.html';">
+                    <img src="/assets/breakout.png"  >
+                    <h4>breakout</h4>
+                    <p  >(onvoltooid) spelletje van 2020</p>
+                </div>
+                <div  class="grid-item" style="margin: 0px;" onclick="location.href='/projects/desktopachtergrond.html';">
+                    <img src="/assets/achtergrond.png"  >
+                    <h4>Letterklok</h4>
+                    <p  >achtergrond van mijn desktop pc</p>
+                </div>
+                <div  class="grid-item" style="margin: 0px;" onclick="location.href='/projects/AAA.html';">
+                    <img src="/assets/AAA.png"  >
+                    <h4>AAAAAAA</h4>
+                    <p  >aaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                </div>
+                <div  class="grid-item" style="margin: 0px;" onclick="location.href='/projects/imense_astronaut.html';">
+                    <img src="/assets/Immense_Astronaut.png"  >
+                    <h4>Immense astronaut</h4>
+                    <p  >oneindige scroller game</p>
+                </div>
+                <!--<div class="grid-item" style="margin: 0px;" onclick="location.href='/projects/PROJECT.html';">
+                    <img src="/assets/PROJECT.png">
+                    <h4>PROJECT</h4>
+                    <p>PROJECT</p>
+                </div>-->
+              </div>    
+
+        </div>
+
     </div>
 
-    <div class="grid-container">
-        <div class="grid-item" onclick="location.href='/projects/ascii-webcam.html';">
-            <img src="/assets/ascii-webcam.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
-            <h5>ASCII webcam filter</h5>
-            <p style="font-size: 15px">is wat het zegt dat het is</p>
-        </div>
-        <div class="grid-item" onclick="location.href='/projects/PI_polygon.html';">
-            <img src="/assets/PiPolygon.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
-            <h5>Pi berekenen</h5>
-            <p style="font-size: 15px">Pi berekenen met de methode van Archimedes</p>
-        </div>
-        <div class="grid-item" onclick="location.href='/projects/US-flag.html';">
-            <img src="/assets/US-flag.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
-            <h5>VS-vlag generator</h5>
-            <p style="font-size: 15px">willekeurige, legale!, amerikaanse vlaggen</p>
-        </div>
-        <div class="grid-item" onclick="location.href='/projects/slimste_mens.html';">
-            <img src="/assets/slimste.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
-            <h5>Slimste Mens timer</h5>
-            <p style="font-size: 15px">Project voor aspi's bij de groepen bivak 2022</p>
-        </div>
-        <div class="grid-item" onclick="location.href='/projects/obnoxious_creation.html';">
-            <img src="/assets/obnoxious_creation.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
-            <h4>obnoxious creation</h4>
-            <p style="font-size: 15px">coronasimulatie voor OCP</p>
-        </div>
-        <div class="grid-item" onclick="location.href='/projects/breakout.html';">
-            <img src="/assets/breakout.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
-            <h5>breakout</h5>
-            <p style="font-size: 15px">(onvoltooid) spelletje van 2020</p>
-        </div>
-        <div class="grid-item" onclick="location.href='/projects/desktopachtergrond.html';">
-            <img src="/assets/achtergrond.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
-            <h5>Letterklok</h5>
-            <p style="font-size: 15px">achtergrond van mijn desktop pc</p>
-        </div>
-        <div class="grid-item" onclick="location.href='/projects/AAA.html';">
-            <img src="/assets/AAA.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
-            <h5>AAAAAAA</h5>
-            <p style="font-size: 15px">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-        </div>
-        <div class="grid-item" onclick="location.href='/projects/imense_astronaut.html';">
-            <img src="/assets/Immense_Astronaut.png" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
-            <h5>Immense astronaut</h5>
-            <p style="font-size: 15px">oneindige scroller game</p>
-        </div>
-    </div>
-
-    <footer>
-        <iframe src="footer.html" frameborder="0" height="18px" width="100%"></iframe>
-    </footer>
+    <script src="Animation.js"></script>
 </body>
 
-<!--
-    <div class="grid-item" onclick="location.href='HTMLPAGINA';">
-        <img src="afbeelding source" style="margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 10px; height: 82px;">
-        <h5>naam project</h5>
-        <p style="font-size: 15px">korte beschrijving</p>
-    </div>
--->
+
 </html>
