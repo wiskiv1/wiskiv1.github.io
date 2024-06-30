@@ -12,7 +12,7 @@
             background-color: white;
             margin-top: 100px;
             margin-bottom: 100px;
-            padding-bottom: 10px;
+            padding-bottom: 18px;
         }
 
         body {
@@ -79,8 +79,41 @@
             background-color: #0000002f;
         }
 
-        #content * {
-            margin: 10px;
+        #content {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .onderwijs {
+            margin: auto;
+            padding: 10px;
+        }
+
+        .onderwijs h3 {
+            margin: 0px;
+        }
+
+        .onderwijs p {
+            margin: 1px;
+        }
+
+        .onderwijs img {
+            float: left;
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            margin-right: 18px;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        #links a {
+            color: black;
+            text-decoration: none;
+            background-color: #0000002f;
+            border-radius: 5px;
+            padding: 5px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -108,15 +141,44 @@
         </header>
 
         <div id="content">
-            <h1>Welkom</h1>
+            <h1>Welkom!</h1>
             <p>
                 Deze website is om mijn code projecten te laten zien. Ooit voeg ik misschien andere dingen toe als ik
                 tijd en/of goesting heb. Maar voor nu kan je bovenaan op projects klikken!
             </p>
+
+            <hr>
+            <h1>Opleiding</h1>
+            <div class="onderwijs">
+                <img src="https://d1bnv20w2037a.cloudfront.net/organisation/10605/profile-picture/_300.webp?updated=1704278404000" alt="">
+                <h3>Zavo</h3>
+                <p>Secundair onderwijs - Wetenschappen Wiskunde</p>
+                <p>2016 - 2022</p>
+
+                <br>
+                <img src="https://cdn.worldvectorlogo.com/logos/k-u-leuven.svg" alt="">
+                <h3>Katholieke Universiteit Leuven</h3>
+                <p>Bachelor Ingenieurswetenschappen - Computerwetenschappen / Werktuigkunde</p>
+                <p>2022 - 2025 (huidig)</p>
+                
+                <!--<br>
+                <img src="https://cdn.worldvectorlogo.com/logos/k-u-leuven.svg" alt="">
+                <h3>Katholieke Universiteit Leuven</h3>
+                <p>Master Computerwetenschappen</p>
+                <p>2025 - 2027 </p>-->
+            </div>
+
+            <hr>
+            <h1>Contact</h1>
+            <p>
+                Moest je op één of andere manier nog niet genoeg van mij hebben: <br>
+            </p>
+            <div id="links">
+                <a href="https://github.com/wiskiv1" target="_blank">Github</a>
+                <a href="https://www.youtube.com/channel/UCj9wWQb1zLGBQyu2gARWapQ" target="_blank">YouTube</a>
+            </div>
         </div>
-
     </div>
-
     <script src="Animation.js"></script>
 </body>
 
